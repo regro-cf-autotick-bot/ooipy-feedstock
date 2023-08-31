@@ -1,5 +1,5 @@
 {% set name = "ooipy" %}
-{% set version = "1.1.2" %}
+{% set version = "1.2.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b51634ebeafc9e98ce8a55f7af0a81bae0baede16f2ee44c2ac5daad8e5d73e6
+  sha256: d45dbe0eea2669c49bfc285a533f9e1039cadd52dba1554eb5b65b4dee431a00
 
 build:
   number: 0
