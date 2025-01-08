@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: b51634ebeafc9e98ce8a55f7af0a81bae0baede16f2ee44c2ac5daad8e5d73e6
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    # [unix]
@@ -21,7 +21,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools >=45
     - setuptools_scm >=3.4
     - toml
@@ -29,7 +29,7 @@ requirements:
     - aiohttp
     - fsspec
     - obspy
-    - python >=3.6
+    - python >={{ python_min }}
     - pandas
 
 test:
@@ -40,6 +40,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/ooipy/ooipy
